@@ -1,0 +1,103 @@
+.floating-wa-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.floating-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.floating-call-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--black);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s;
+  cursor: pointer;
+}
+
+.floating-call-btn:hover {
+  transform: scale(1.1);
+  background-color: var(--accent-base);
+}
+
+.wa-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wa-tooltip {
+  background: var(--white);
+  color: var(--black);
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px; /* Pill shape for premium feel */
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  display: none; 
+}
+
+@media (min-width: 640px) {
+  .wa-tooltip { display: block; }
+}
+
+.wa-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--white);
+}
+
+.floating-wa-btn {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.floating-wa-btn:hover {
+  transform: scale(1.1);
+}
+
+.wa-icon { position: relative; z-index: 10; }
+
+.pulse-ring, .pulse-ring-2 {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  background-color: rgba(37, 211, 102, 0.6);
+  z-index: 1;
+}
+
+.pulse-ring { animation: pulseAnim 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1); }
+.pulse-ring-2 { animation: pulseAnim 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s; }
+
+@keyframes pulseAnim {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}

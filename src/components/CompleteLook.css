@@ -1,0 +1,74 @@
+.complete-look-section {
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.look-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .look-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tilt-wrapper {
+  background-color: var(--surface-alt);
+  border-radius: var(--radius-lg);
+  transform-style: preserve-3d;
+}
+
+.look-card {
+  position: relative;
+  height: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.look-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateZ(30px); /* 3D depth */
+}
+
+.look-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 3rem 2rem 2rem 2rem;
+  color: white;
+  transform: translateZ(50px); /* Pop out effect */
+}
+
+.look-info h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.look-info p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.look-info .btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.look-info .btn-secondary:hover {
+  background: white;
+  color: var(--black);
+}

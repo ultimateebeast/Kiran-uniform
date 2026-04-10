@@ -1,0 +1,89 @@
+.about-owner-section {
+  background-color: var(--surface-alt);
+}
+
+.owner-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .owner-grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.owner-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 600px;
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--surface-alt);
+}
+
+.owner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.owner-name-plate {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  color: var(--black);
+}
+
+.owner-name-plate h4 { margin: 0; font-size: 1.25rem; }
+.owner-name-plate p { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
+
+.owner-content {
+  padding-right: 2rem;
+}
+
+.text-left { text-align: left; }
+
+.owner-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--accent-base);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  border-left: 4px solid var(--accent-base);
+  padding-left: 1.5rem;
+}
+
+.owner-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.signature {
+  font-family: 'Playfair Display', serif; /* or script-like */
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--black);
+  margin-top: 3rem;
+  opacity: 0.8;
+}
