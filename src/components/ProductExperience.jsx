@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
-import WhatsAppIcon from './icons/WhatsAppIcon';
+import React from 'react';
+import { motion } from 'framer-motion';
 import './ProductExperience.css';
 
 const products = [
@@ -16,20 +14,6 @@ const products = [
 ];
 
 const ProductExperience = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [selectedSize, setSelectedSize] = useState('');
-  const [note, setNote] = useState('');
-
-  const handleWhatsApp = () => {
-    if (!selectedSize) {
-        alert("Please select a size first.");
-        return;
-    }
-    const message = `Hi, I want to check availability:\n\n*Product:* ${selectedProduct.name}\n*Size:* ${selectedSize}\n*Note:* ${note || 'None'}\n*Location:* Website Inquiry\n\nPlease confirm availability.`;
-    const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/917619991755?text=${encoded}`, '_blank');
-  };
-
   return (
     <section id="products" className="product-experience-section section-padding">
       <div className="container">
@@ -54,94 +38,32 @@ const ProductExperience = () => {
 
         <div className="product-grid-v2">
           {products.map((product, idx) => (
-            <motion.div 
-              key={product.id} 
+            <motion.article
+              key={product.id}
               className="product-card-v2"
-              onClick={() => { setSelectedProduct(product); setSelectedSize(''); setNote(''); }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="card-perspective-wrapper">
-                <div className="p-image">
-                  <img src={product.img} alt={product.name} />
-                  {product.discount && (
-                    <div className="discount-badge">{product.discount}</div>
-                  )}
-                  <div className="p-overlay"><span>Check Availability</span></div>
+              <div className="product-card-surface">
+                <div className="card-perspective-wrapper">
+                  <div className="p-image">
+                    <img src={product.img} alt={product.name} loading="lazy" decoding="async" />
+                    {product.discount && (
+                      <div className="discount-badge">{product.discount}</div>
+                    )}
+                  </div>
+                </div>
+                <div className="p-info">
+                  <span className="p-category">{product.category}</span>
+                  <h3>{product.name}</h3>
                 </div>
               </div>
-              <div className="p-info">
-                <span>{product.category}</span>
-                <h3>{product.name}</h3>
-              </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
-
-      <AnimatePresence>
-        {selectedProduct && (
-          <motion.div 
-            className="modal-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div 
-              className="smart-modal luxury-modal"
-              initial={{ y: 50, scale: 0.95, opacity: 0 }}
-              animate={{ y: 0, scale: 1, opacity: 1 }}
-              exit={{ y: 30, scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <button className="close-modal" onClick={() => setSelectedProduct(null)}><X size={24} /></button>
-              
-              <div className="modal-content-grid">
-                <div className="modal-image">
-                  <img src={selectedProduct.img} alt={selectedProduct.name} />
-                </div>
-                <div className="modal-details">
-                  <div className="brand-label">Kiran Uniform</div>
-                  <h3>{selectedProduct.name}</h3>
-                  <p className="modal-desc">{selectedProduct.desc}</p>
-                  
-                  <div className="form-group">
-                    <label>Select Size</label>
-                    <div className="size-selector">
-                      {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
-                        <button 
-                          key={size}
-                          className={`size-btn ${selectedSize === size ? 'active' : ''}`}
-                          onClick={() => setSelectedSize(size)}
-                        >
-                          {size}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="form-group pb-2">
-                    <label>Optional Note</label>
-                    <input 
-                      type="text" 
-                      placeholder="e.g. Need for 5th class student" 
-                      className="smart-input"
-                      value={note}
-                      onChange={(e) => setNote(e.target.value)}
-                    />
-                  </div>
-
-                  <button type="button" className="btn-primary w-full" onClick={handleWhatsApp}>
-                    <WhatsAppIcon size={20} color="#ffffff" aria-hidden /> Check Availability via WhatsApp
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

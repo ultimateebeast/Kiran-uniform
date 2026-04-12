@@ -29,22 +29,20 @@ const CompleteLook = () => {
         <div className="look-grid">
           <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} transitionSpeed={2500} className="tilt-wrapper">
             <div className="look-card">
-              <img src="/images/look.png" alt="Boys Complete Look" />
+              <img src="/images/look.png" alt="Boys Complete Look" loading="lazy" decoding="async" />
               <div className="look-info">
                 <h3>Boys Standard Set</h3>
                 <p>Shirt + Trousers + Tie + Belt</p>
-                <button className="btn-secondary">View Set</button>
               </div>
             </div>
           </Tilt>
 
           <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} transitionSpeed={2500} className="tilt-wrapper">
             <div className="look-card">
-              <img src="/images/skirt.png" alt="Girls Complete Look" />
+              <img src="/images/skirt.png" alt="Girls Complete Look" loading="lazy" decoding="async" />
               <div className="look-info">
                 <h3>Girls Standard Set</h3>
                 <p>Shirt + Skirt + Tie + Belt</p>
-                <button className="btn-secondary">View Set</button>
               </div>
             </div>
           </Tilt>

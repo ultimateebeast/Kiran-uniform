@@ -23,7 +23,10 @@ const BeforeYouVisit = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bv-badge"><ClipboardList size={18} /> Essential Checklist</div>
+            <div className="bv-badge">
+              <ClipboardList size={18} aria-hidden />
+              Essential Checklist
+            </div>
             <h2>Before You Visit</h2>
             <p className="bv-subtitle">To ensure a smooth and quick experience, we recommend keeping these points in mind before dropping by the store.</p>
             
@@ -36,7 +39,9 @@ const BeforeYouVisit = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + (idx * 0.1) }}
                 >
-                  <span className="check-icon"><Check size={20} /></span>
+                  <span className="check-icon" aria-hidden>
+                    <Check size={18} strokeWidth={2.5} />
+                  </span>
                   {tip.text}
                 </motion.li>
               ))}
@@ -53,7 +58,7 @@ const BeforeYouVisit = () => {
             <div className="bv-card-stack">
               <div className="bv-card-back"></div>
               <div className="bv-card-front overflow-hidden">
-                <img src="/images/look.png" alt="Preparation" />
+                <img src="/images/look.png" alt="Preparation" loading="lazy" decoding="async" />
                 <div className="bv-overlay-hint">Parents LOVE this feature ❤️</div>
               </div>
             </div>

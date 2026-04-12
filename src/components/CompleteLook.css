@@ -79,24 +79,6 @@
 .look-info p {
   color: rgba(255, 255, 255, 0.88);
   font-size: 0.95rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   line-height: 1.5;
-}
-
-@media (min-width: 768px) {
-  .look-info p {
-    margin-bottom: 1.5rem;
-  }
-}
-
-.look-info .btn-secondary {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
-}
-
-.look-info .btn-secondary:hover {
-  background: white;
-  color: var(--black);
 }
