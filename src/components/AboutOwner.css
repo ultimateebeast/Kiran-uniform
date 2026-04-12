@@ -9,6 +9,13 @@
   align-items: center;
 }
 
+@media (max-width: 1023px) {
+  .owner-grid {
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+}
+
 @media (min-width: 1024px) {
   .owner-grid {
     grid-template-columns: 1fr 1.2fr;
@@ -21,9 +28,30 @@
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  height: 600px;
+  height: min(85vw, 420px);
+  min-height: 300px;
   overflow: hidden;
   box-shadow: var(--shadow-premium);
+}
+
+@media (max-width: 639px) {
+  .owner-image-wrapper {
+    max-width: none;
+    width: 100%;
+    height: min(72vw, 300px);
+    min-height: 240px;
+    border-radius: 16px;
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.12),
+      0 0 0 1px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@media (min-width: 1024px) {
+  .owner-image-wrapper {
+    height: 600px;
+    min-height: 0;
+  }
 }
 
 .carousel-container {
@@ -51,14 +79,76 @@
   color: var(--black);
 }
 
-.owner-name-plate h4 { margin: 0; font-size: 1.25rem; }
-.owner-name-plate p { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
-
-.owner-content {
-  padding-right: 2rem;
+.owner-name-plate h4 {
+  margin: 0;
+  font-size: 1.25rem;
 }
 
-.text-left { text-align: left; }
+.owner-name-plate p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1023px) {
+  .owner-name-plate {
+    bottom: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .owner-name-plate h4 {
+    font-size: 1.05rem;
+    line-height: 1.25;
+  }
+
+  .owner-name-plate p {
+    font-size: 0.8rem;
+    color: #4b5563;
+    margin-top: 0.1rem;
+  }
+}
+
+.owner-content {
+  padding-right: 0;
+}
+
+@media (min-width: 1024px) {
+  .owner-content {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .owner-content {
+    padding: 0.25rem 0 0;
+  }
+
+  .about-owner-section .owner-content .section-title {
+    margin-bottom: 0.65rem;
+    font-size: clamp(1.65rem, 6vw, 2.25rem);
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 639px) {
+  .owner-content {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.15rem 1rem 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.text-left {
+  text-align: left;
+}
 
 .owner-quote {
   font-family: var(--font-heading);
@@ -72,18 +162,59 @@
   padding-left: 1.5rem;
 }
 
+@media (max-width: 1023px) {
+  .owner-quote {
+    font-size: clamp(1.15rem, 4.2vw, 1.45rem);
+    font-weight: 400;
+    margin-bottom: 1.15rem;
+    padding-left: 0.9rem;
+    border-left-width: 3px;
+    line-height: 1.4;
+  }
+}
+
 .owner-text {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
 }
 
+@media (max-width: 1023px) {
+  .owner-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.1rem;
+    color: #4b5563;
+  }
+
+  .owner-text:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .owner-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+}
+
 .signature {
-  font-family: 'Playfair Display', serif; /* or script-like */
+  font-family: var(--font-heading);
   font-size: 2rem;
   font-style: italic;
+  font-weight: 500;
   color: var(--black);
   margin-top: 3rem;
-  opacity: 0.8;
+  opacity: 0.85;
+}
+
+@media (max-width: 1023px) {
+  .signature {
+    font-size: 1.35rem;
+    margin-top: 1.35rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
 }

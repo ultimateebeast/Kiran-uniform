@@ -14,7 +14,7 @@ const AboutOwner = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <img src="/images/owner.png" alt="Kamal Jain - Owner" className="owner-img single-owner" />
+            <img src="/images/owner.png" alt="Kamal Jain - Owner" className="owner-img single-owner" loading="lazy" decoding="async" />
             <div className="owner-name-plate glass-panel">
               <h4>Kamal Jain</h4>
               <p>Founder, Kiran Uniform</p>
@@ -31,7 +31,7 @@ const AboutOwner = () => {
             <h2 className="section-title text-left">Meet the Owner</h2>
             
             <div className="owner-quote">
-              "We treat every student like our own."
+              “We treat every student like our own.”
             </div>
             
             <p className="owner-text">

@@ -21,23 +21,33 @@ const TrustLayer = () => {
           
           <div className="trust-metrics">
             <div className="metric-item">
-              <div className="metric-icon glow-icon">
+              <div className="metric-icon glow-icon" aria-hidden>
                 <Star size={28} fill="currentColor" />
               </div>
-              <h4>4.8 Rating</h4>
-              <p>Consistently high reviews</p>
+              <div className="metric-copy">
+                <h4>4.8 Rating</h4>
+                <p>Consistently high reviews</p>
+              </div>
             </div>
-            
+
             <div className="metric-item">
-              <div className="metric-icon glow-icon"><Users size={32} /></div>
-              <h4>1000+ Students</h4>
-              <p>Dressed proudly every year</p>
+              <div className="metric-icon glow-icon" aria-hidden>
+                <Users size={28} />
+              </div>
+              <div className="metric-copy">
+                <h4>1000+ Students</h4>
+                <p>Dressed proudly every year</p>
+              </div>
             </div>
-            
+
             <div className="metric-item">
-              <div className="metric-icon glow-icon"><CheckCircle size={32} /></div>
-              <h4>Since 1995</h4>
-              <p>Years of unshakeable trust</p>
+              <div className="metric-icon glow-icon" aria-hidden>
+                <CheckCircle size={28} />
+              </div>
+              <div className="metric-copy">
+                <h4>Since 1995</h4>
+                <p>Years of unshakeable trust</p>
+              </div>
             </div>
           </div>
         </motion.div>

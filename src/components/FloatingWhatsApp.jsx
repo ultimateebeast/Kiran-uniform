@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
+import WhatsAppIcon from './icons/WhatsAppIcon';
 import './FloatingWhatsApp.css';
 
 const FloatingWhatsApp = () => {
@@ -18,24 +19,26 @@ const FloatingWhatsApp = () => {
         </a>
 
         <div className="wa-wrapper">
-          <motion.div 
+          <motion.div
             className="wa-tooltip"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 2, duration: 0.5 }}
           >
-            Need help? Ask instantly
+            <WhatsAppIcon size={20} color="#25D366" className="wa-tooltip-brand" aria-hidden />
+            <span>Need help? Ask instantly</span>
           </motion.div>
 
-          <a 
+          <a
             href="https://wa.me/917619991755?text=Hi,%20I'm%20looking%20for%20school%20uniforms..."
-            target="_blank" 
+            target="_blank"
             rel="noreferrer"
             className="floating-wa-btn"
+            aria-label="Chat on WhatsApp"
           >
             <div className="pulse-ring"></div>
             <div className="pulse-ring-2"></div>
-            <MessageCircle size={28} className="wa-icon" />
+            <WhatsAppIcon size={30} color="#ffffff" className="wa-icon" aria-hidden />
           </a>
         </div>
         

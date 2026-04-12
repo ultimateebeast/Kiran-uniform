@@ -32,28 +32,35 @@ const StoryScroll = () => {
         ></motion.div>
 
         <div className="story-content-wrapper">
-          <motion.div className="story-step" style={{ opacity: opacity1, y: y1 }}>
-            <span className="story-year">Phase I</span>
-            <h2>Kid entering school</h2>
-            <p>From the oversized first shirt to the excitement of a new journey.</p>
-          </motion.div>
+          {/* Wrapper keeps translate(-50%,-50%); inner motion only sets y — otherwise inline transform breaks centering on mobile */}
+          <div className="story-step">
+            <motion.div className="story-step-motion" style={{ opacity: opacity1, y: y1 }}>
+              <span className="story-year">Phase I</span>
+              <h2>Kid entering school</h2>
+              <p>From the oversized first shirt to the excitement of a new journey.</p>
+            </motion.div>
+          </div>
 
-          <motion.div className="story-step" style={{ opacity: opacity2, y: y2 }}>
-            <span className="story-year">Phase II</span>
-            <h2>Student growing</h2>
-            <p>Through every class, every exam, we've designed for their comfort.</p>
-          </motion.div>
+          <div className="story-step">
+            <motion.div className="story-step-motion" style={{ opacity: opacity2, y: y2 }}>
+              <span className="story-year">Phase II</span>
+              <h2>Student growing</h2>
+              <p>Through every class, every exam, we've designed for their comfort.</p>
+            </motion.div>
+          </div>
 
-          <motion.div className="story-step" style={{ opacity: opacity3, y: y3 }}>
-            <motion.h2 
-              className="highlight-text"
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 1 }}
-            >
-              "Every step matters."
-            </motion.h2>
-          </motion.div>
+          <div className="story-step">
+            <motion.div className="story-step-motion" style={{ opacity: opacity3, y: y3 }}>
+              <motion.h2
+                className="highlight-text"
+                initial={{ scale: 0.9 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 1 }}
+              >
+                “Every step matters.”
+              </motion.h2>
+            </motion.div>
+          </div>
         </div>
 
       </div>

@@ -26,17 +26,21 @@ const WhyChooseUs = () => {
 
         <div className="features-grid">
           {reasons.map((item, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               className="feature-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
             >
-              <div className="feature-icon">{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+              <div className="feature-icon" aria-hidden>
+                {item.icon}
+              </div>
+              <div className="feature-copy">
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>

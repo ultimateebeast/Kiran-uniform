@@ -1,8 +1,15 @@
 .floating-wa-container {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  right: max(1rem, env(safe-area-inset-right, 0px));
   z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  .floating-wa-container {
+    bottom: 2rem;
+    right: 2rem;
+  }
 }
 
 .floating-stack {
@@ -13,8 +20,8 @@
 }
 
 .floating-call-btn {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background-color: var(--black);
   color: white;
@@ -40,17 +47,26 @@
 .wa-tooltip {
   background: var(--white);
   color: var(--black);
-  padding: 0.75rem 1.25rem;
+  padding: 0.65rem 1.1rem;
   border-radius: 9999px; /* Pill shape for premium feel */
   font-size: 0.9rem;
   font-weight: 500;
   box-shadow: var(--shadow-md);
   position: relative;
-  display: none; 
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.wa-tooltip-brand {
+  flex-shrink: 0;
 }
 
 @media (min-width: 640px) {
-  .wa-tooltip { display: block; }
+  .wa-tooltip {
+    display: flex;
+  }
 }
 
 .wa-tooltip::after {
@@ -66,8 +82,8 @@
 
 .floating-wa-btn {
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background-color: #25D366;
   color: white;

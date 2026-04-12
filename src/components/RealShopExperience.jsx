@@ -34,15 +34,15 @@ const RealShopExperience = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="masonry-main warm-grain">
-            <img src="/images/storefront.png" alt="Shop Storefront" loading="lazy" />
+            <img src="/images/storefront.png" alt="Shop Storefront" loading="lazy" decoding="async" />
             <div className="masonry-badge"><MapPin size={16}/> Shop no 17, Neelgiri Complex</div>
           </div>
           <div className="masonry-side">
             <div className="masonry-img-wrapper warm-grain">
-              <img src="/images/shop.png" alt="Accessories Shelf" loading="lazy" />
+              <img src="/images/shop.png" alt="Accessories Shelf" loading="lazy" decoding="async" />
             </div>
             <div className="masonry-img-wrapper warm-grain">
-              <img src="/images/skirt.png" alt="Uniform details" loading="lazy" />
+              <img src="/images/skirt.png" alt="Uniform details" loading="lazy" decoding="async" />
             </div>
           </div>
         </motion.div>
