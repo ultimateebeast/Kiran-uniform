@@ -1,16 +1,29 @@
 .trust-layer-section {
   background-color: var(--white);
-  padding: 5rem 0;
+  padding: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .trust-layer-section {
+    padding: 5rem 0;
+  }
 }
 
 .trust-banner {
   border-radius: 32px; /* Apple-like large radii */
-  padding: 4rem 3rem;
+  padding: 2rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   overflow: hidden;
   position: relative;
+}
+
+@media (min-width: 640px) {
+  .trust-banner {
+    padding: 3rem 2rem;
+    gap: 2.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -19,6 +32,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 5rem 4rem;
+    gap: 3rem;
   }
 }
 
@@ -31,8 +45,15 @@
 }
 
 .trust-header p {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+@media (min-width: 768px) {
+  .trust-header p {
+    font-size: 1.1rem;
+  }
 }
 
 .trust-metrics {
@@ -69,4 +90,19 @@
 .metric-item p {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 767px) {
+  .trust-metrics {
+    gap: 2rem;
+  }
+
+  .metric-item h4 {
+    font-size: 1.35rem;
+  }
+
+  .metric-item p {
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.45;
+  }
 }

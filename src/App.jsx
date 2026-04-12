@@ -13,6 +13,7 @@ import BeforeYouVisit from './components/BeforeYouVisit';
 import RealShopExperience from './components/RealShopExperience';
 import Contact from './components/Contact';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import './components/HeroGuidedLayout.css';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -21,7 +22,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 2800);
     return () => clearTimeout(timer);
   }, []);
 
@@ -45,7 +46,7 @@ function App() {
           >
             <main>
               {/* GuidedFlow is now floating, so it's placed within the Hero section visually, but rendered here */}
-              <div style={{ position: 'relative' }}>
+              <div className="hero-with-guided">
                 <Hero />
                 <GuidedFlow />
               </div>

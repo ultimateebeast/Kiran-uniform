@@ -1,5 +1,6 @@
 .before-visit-section {
   background-color: var(--white);
+  overflow-x: hidden;
 }
 
 .before-visit-grid {
@@ -53,6 +54,17 @@
   gap: 1rem;
   font-size: 1.05rem;
   color: var(--text-primary);
+  line-height: 1.5;
+}
+
+@media (max-width: 639px) {
+  .bv-list li {
+    font-size: 1rem;
+  }
+
+  .bv-subtitle {
+    font-size: 1.02rem;
+  }
 }
 
 .check-icon {
@@ -71,18 +83,36 @@
 .bv-card-stack {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: min(68vw, 340px);
+  min-height: 260px;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .bv-card-stack {
+    height: 500px;
+    min-height: 0;
+  }
 }
 
 .bv-card-back {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
-  right: -2rem;
-  bottom: -2rem;
+  top: 1rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: -1rem;
   background-color: var(--surface-alt);
   border-radius: var(--radius-lg);
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .bv-card-back {
+    top: 2rem;
+    left: 2rem;
+    right: -2rem;
+    bottom: -2rem;
+  }
 }
 
 .bv-card-front {
@@ -105,13 +135,26 @@
 
 .bv-overlay-hint {
   position: absolute;
-  bottom: 2rem;
-  right: -1rem;
+  bottom: 1rem;
+  right: 0.5rem;
   background: var(--accent-base);
   color: white;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   border-radius: 12px;
   font-weight: 600;
+  font-size: 0.9rem;
   box-shadow: var(--shadow-glow);
-  transform: rotate(-5deg);
+  transform: rotate(-3deg);
+  max-width: calc(100% - 1rem);
+}
+
+@media (min-width: 768px) {
+  .bv-overlay-hint {
+    bottom: 2rem;
+    right: -1rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    transform: rotate(-5deg);
+    max-width: none;
+  }
 }

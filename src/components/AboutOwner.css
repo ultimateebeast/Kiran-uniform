@@ -21,9 +21,17 @@
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  height: 600px;
+  height: min(85vw, 420px);
+  min-height: 300px;
   overflow: hidden;
   box-shadow: var(--shadow-premium);
+}
+
+@media (min-width: 1024px) {
+  .owner-image-wrapper {
+    height: 600px;
+    min-height: 0;
+  }
 }
 
 .carousel-container {
@@ -55,7 +63,13 @@
 .owner-name-plate p { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
 
 .owner-content {
-  padding-right: 2rem;
+  padding-right: 0;
+}
+
+@media (min-width: 1024px) {
+  .owner-content {
+    padding-right: 2rem;
+  }
 }
 
 .text-left { text-align: left; }
@@ -73,10 +87,17 @@
 }
 
 .owner-text {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .owner-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
 }
 
 .signature {

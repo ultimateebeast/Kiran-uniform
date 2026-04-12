@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MessageCircle } from 'lucide-react';
+import { X } from 'lucide-react';
+import WhatsAppIcon from './icons/WhatsAppIcon';
 import './ProductExperience.css';
 
 const products = [
@@ -132,8 +133,8 @@ const ProductExperience = () => {
                     />
                   </div>
 
-                  <button className="btn-primary w-full" onClick={handleWhatsApp}>
-                    <MessageCircle size={20} /> Check Availability via WhatsApp
+                  <button type="button" className="btn-primary w-full" onClick={handleWhatsApp}>
+                    <WhatsAppIcon size={20} color="#ffffff" aria-hidden /> Check Availability via WhatsApp
                   </button>
                 </div>
               </div>

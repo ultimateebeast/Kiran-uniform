@@ -1,17 +1,77 @@
 .guided-flow-wrapper {
   position: absolute;
-  bottom: 2rem;
+  bottom: max(1rem, env(safe-area-inset-bottom, 0px));
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   z-index: 50;
-  padding: 0 1.5rem;
+  padding: 0 max(1rem, env(safe-area-inset-left, 0px)) 0 max(1rem, env(safe-area-inset-right, 0px));
+}
+
+@media (max-width: 767px) {
+  /* Sits below hero content — no overlap with “Visit Store” */
+  .hero-with-guided .guided-flow-wrapper {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    flex-shrink: 0;
+    padding: 0.35rem max(1rem, env(safe-area-inset-left, 0px))
+      max(1rem, env(safe-area-inset-bottom, 0px))
+      max(1rem, env(safe-area-inset-right, 0px));
+  }
+
+  .hero-with-guided .guided-flow-card {
+    padding: 0.85rem 0.9rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow:
+      0 -12px 40px rgba(0, 0, 0, 0.35),
+      0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .hero-with-guided .guided-flow-header h3 {
+    font-size: 1rem;
+    margin-bottom: 0.65rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-with-guided .guided-flow-options {
+    gap: 0.4rem;
+  }
+
+  .hero-with-guided .flow-item {
+    min-height: 44px;
+    padding: 0.45rem 0.4rem;
+    gap: 0.65rem;
+    border-radius: 10px;
+    background: rgba(10, 31, 68, 0.04);
+  }
+
+  .hero-with-guided .flow-item:active {
+    background: rgba(10, 31, 68, 0.08);
+  }
+
+  .hero-with-guided .flow-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hero-with-guided .flow-text-group h4 {
+    font-size: 0.95rem;
+  }
+
+  .hero-with-guided .flow-text-group p {
+    font-size: 0.8rem;
+    color: #4b5563;
+    line-height: 1.3;
+  }
 }
 
 .guided-flow-card {
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 1.1rem 1rem;
   display: flex;
   flex-direction: column;
   color: var(--black);
@@ -20,8 +80,8 @@
 }
 
 .guided-flow-header h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
   font-weight: 600;
   color: var(--black);
 }
@@ -38,33 +98,63 @@
     align-items: center;
     padding: 1rem 2rem;
   }
-  
+
+  .guided-flow-card.glass-panel {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow:
+      0 10px 44px rgba(0, 0, 0, 0.32),
+      0 0 0 1px rgba(15, 23, 42, 0.06);
+  }
+
   .guided-flow-header {
     margin-right: 2rem;
     padding-right: 2rem;
-    border-right: 1px solid rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
   }
 
   .guided-flow-header h3 {
+    font-size: 1.25rem;
     margin-bottom: 0;
+    color: #0f172a;
+    font-weight: 700;
   }
-  
+
   .guided-flow-options {
     flex-direction: row;
     flex: 1;
     gap: 2rem;
     justify-content: space-around;
   }
+
+  .flow-text-group h4 {
+    font-size: 1.02rem;
+    color: #0f172a;
+  }
+
+  .flow-text-group p {
+    font-size: 0.875rem;
+    line-height: 1.35;
+    color: #475569;
+    font-weight: 500;
+  }
+
+  .flow-item {
+    padding: 0.55rem 0.45rem;
+    min-height: 48px;
+  }
 }
 
 .flow-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.85rem;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.65rem 0.5rem;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 48px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .flow-item:hover {
@@ -85,13 +175,14 @@
 }
 
 .flow-text-group h4 {
-  font-size: 1rem;
-  margin-bottom: 0.1rem;
+  font-size: 0.98rem;
+  margin-bottom: 0.15rem;
   color: var(--black);
 }
 
 .flow-text-group p {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  line-height: 1.2;
+  line-height: 1.35;
 }
+

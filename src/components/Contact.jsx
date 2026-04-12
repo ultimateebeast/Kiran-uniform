@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapPin, Phone, MessageSquare, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock } from 'lucide-react';
+import WhatsAppIcon from './icons/WhatsAppIcon';
 import './Contact.css';
 
 const Contact = () => {
@@ -38,11 +39,18 @@ const Contact = () => {
             </div>
 
             <div className="contact-actions">
-              <a href="https://wa.me/917619991755?text=Hi,%20I%20want%20to%20check%20availability%20for..." target="_blank" rel="noreferrer" className="btn-primary" style={{ backgroundColor: '#25D366' }}>
-                <MessageSquare size={18} /> WhatsApp Us
+              <a href="https://wa.me/917619991755?text=Hi,%20I%20want%20to%20check%20availability%20for..." target="_blank" rel="noreferrer" className="btn-primary" style={{ backgroundColor: '#25D366' }} aria-label="WhatsApp Us">
+                <WhatsAppIcon size={22} color="#ffffff" aria-hidden />
+                <span>WhatsApp Us</span>
               </a>
-              <a href="tel:7619991755" className="btn-secondary-dark" style={{ borderColor: 'var(--white)', color: 'var(--white)' }}>
-                <Phone size={18} /> Call Now
+              <a
+                href="tel:7619991755"
+                className="btn-secondary-dark"
+                style={{ borderColor: 'var(--white)', color: 'var(--white)' }}
+                aria-label="Call Now"
+              >
+                <Phone size={22} strokeWidth={2} aria-hidden />
+                <span>Call Now</span>
               </a>
             </div>
           </div>
