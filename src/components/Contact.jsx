@@ -17,7 +17,7 @@ const Contact = () => {
                 <MapPin className="c-icon" size={24} />
                 <div>
                   <h4>Store Address</h4>
-                  <p>Shop no 17, Neelgiri Complex, Ayodhya Road,<br/>Kailash Kunj, Block A, Indira Nagar,<br/>Lucknow, Uttar Pradesh 226016</p>
+                  <p>Shop no 17, Neelgiri Complex, Ayodhya Road,<br/> Block A, Indira Nagar,<br/>Lucknow, Uttar Pradesh 226016</p>
                 </div>
               </div>
 
@@ -59,7 +59,7 @@ const Contact = () => {
             <div className="map-wrapper glass-panel">
               {/* Using a fixed generic maps embed link to avoid API key errors */}
               <iframe 
-                src="https://maps.google.com/maps?q=Neelgiri%20Complex,%20Indira%20Nagar,%20Lucknow&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.app.goo.gl/fy5sAWDSPQXRjrM1A?g_st=aw"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
