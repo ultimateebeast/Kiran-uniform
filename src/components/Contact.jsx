@@ -59,7 +59,7 @@ const Contact = () => {
             <div className="map-wrapper glass-panel">
               {/* Using a fixed generic maps embed link to avoid API key errors */}
               <iframe 
-                src="https://maps.app.goo.gl/fy5sAWDSPQXRjrM1A?g_st=aw"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.9818227627006!2d80.97655209999999!3d26.872318599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd19b8f3b879%3A0x82fd365ed36ad56e!2sKiran%20Uniform%20(School%20Uniform%20Store)!5e0!3m2!1sen!2sin!4v1776198879527!5m2!1sen!2sin"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
